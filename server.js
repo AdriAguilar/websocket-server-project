@@ -25,7 +25,7 @@ io.on('connection', (socket) => {
       message: message
     };
     // redisClient.rPush(`chat:${chatId}`, JSON.stringify(chatMessage));
-    io.to(chatId).emit('receiveMessage', JSON.stringify(chatMessage));
+    io.to(chatId).emit('receiveMessage', chatMessage);
   });
 
   // Manejar el evento "leave" cuando un usuario sale de un chat
